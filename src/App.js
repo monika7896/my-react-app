@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-function App() {
+export const Header = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="header">
+        <img
+          className="logo"
+          src="https://cdn.dribbble.com/userupload/8808323/file/original-e6f29bc34a354b53b6d793412fa64c3e.gif"
+        ></img>
+        <div className="nav-items">
+          <ul>
+            <li>Home</li>
+            <li>About Us</li>
+            <li>Contact Us</li>
+            <li>Cart</li>
+          </ul>
+        </div>
+      </div>
+    </>
   );
-}
+};
 
-export default App;
+export const Restuarent = () => {
+  return (
+    <>
+      <div className="res-card"></div>
+      <h3> Hongs' f Kitchen</h3>
+    </>
+  );
+};
+
+const Body = () => {
+  return (
+    <>
+      <div className="body">
+        <div className="search"> Search</div>
+        <div className="res-container"></div>
+        <Restuarent />
+      </div>
+    </>
+  );
+};
+
+export default Body;
+// export default Header;
