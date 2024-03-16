@@ -1,6 +1,6 @@
 import Restaurant from "./Restuarent";
 import Shimmer from "./shimmer";
-
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const Body = () => {
@@ -81,9 +81,19 @@ const Body = () => {
       <div className="res-container">
         {filteredData.length > 0 ? (
           // Render restaurants if the list is not empty
-          filteredData.map((restaurant, index) => (
-            <Restaurant key={index} resData={restaurant} />
-          ))
+          // filteredData.map((restaurant, index) => (
+          //   <Link to={"/menu/" + restaurant.data.id}>
+          //     <Restaurant key={index} resData={restaurant} />
+          //   </Link>
+          // ))
+          filteredData.map((restaurant, index) => {
+            console.log(restaurant.id);
+            return (
+              <Link to={"/menu/" + restaurant.id} key={index}>
+                <Restaurant key={index} resData={restaurant} />
+              </Link>
+            );
+          })
         ) : (
           // Display a message if the list is empty
           <p>No restaurants found</p>
