@@ -1,7 +1,10 @@
 import { CDN_URL } from "../utils/constant";
 
 const styleCard = {
-  backgroundColor: "LightSeaGreen",
+  // margin: "1rem", // Equivalent to m-4 (margin: 1rem)
+  // padding: "1rem", // Equivalent to p-4 (padding: 1rem)
+  // width: "14.5rem", // Equivalent to w-58 (width: 14.5rem)
+  // backgroundColor: "LightSeaGreen",
 };
 
 const Restaurant = (props) => {
@@ -14,13 +17,14 @@ const Restaurant = (props) => {
 
   return (
     <>
-      <div className="res-card" style={styleCard}>
+      <div className="m-4 p-4 w-60 h-72 rounded-lg bg-gray-200 hover:bg-gray-400">
         <img
-          className="card-logo"
+          className="m-1 p-1 "
+          // className="card-logo"
           src={CDN_URL + resData.cloudinaryImageId}
           alt={name}
         ></img>
-        <h3>{resData.name}</h3>
+        <h3 className="font-bold">{resData.name}</h3>
         <h4>{resData.avgRating}</h4>
         <h5>{resData.cuisines.join(",")}</h5>
       </div>

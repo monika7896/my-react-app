@@ -40,45 +40,63 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
-        <div className="search">
+        <div className="search m-4 p-4">
+          {/* <div className="search"> */}
           <input
             type="text"
-            className="search-box"
+            // className="search-box "
+            className="border border-solid border-black "
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-1 m-2 bg-green-300"
             onClick={() => {
               console.log("pppp", searchText);
               const filteredDataN = listOfRestaurants.filter((res) =>
                 res.name.toLowerCase().includes(searchText.toLowerCase())
               );
 
-              console.log("filteredDatab4444", filteredDataN);
+              // console.log("filteredDatab4444", filteredDataN);
               setfilteredData(filteredDataN);
             }}
           >
             Search
           </button>
-        </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            const filtredList = listOfRestaurants.filter(
-              (res) => res.avgRating > 4
-            );
+          <button
+            className="px-1 m-2 bg-gray-300 "
+            onClick={() => {
+              const filtredList = listOfRestaurants.filter(
+                (res) => res.avgRating > 4
+              );
 
-            setListOfRestaurants(filtredList);
-          }}
-        >
-          {" "}
-          Top rated Restuarent
-        </button>
+              setListOfRestaurants(filtredList);
+            }}
+          >
+            {" "}
+            Top rated Restuarent
+          </button>
+        </div>
+        {/* <div className="search m-4 p-4">
+          <button
+            className="px-0.5 m-1 bg-gray-300 flex item-center"
+            onClick={() => {
+              const filtredList = listOfRestaurants.filter(
+                (res) => res.avgRating > 4
+              );
+
+              setListOfRestaurants(filtredList);
+            }}
+          >
+            {" "}
+            Top rated Restuarent
+          </button>
+        </div> */}
       </div>
-      <div className="search"> Search</div>
-      <div className="res-container">
+      {/* <div className="search"> Search</div> */}
+      <div className="flex flex-wrap">
         {filteredData.length > 0 ? (
           // Render restaurants if the list is not empty
           // filteredData.map((restaurant, index) => (
